@@ -1,0 +1,31 @@
+<div class="container">
+    <br>
+    <div class="row justify-content-md-center">
+        <h1>Money xchange!</h1>
+    </div>
+	<div class="row justify-content-md-center">
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="col-sm-5 my-1">
+                        <input type="number"
+                         name="baseCurrencyAmount" class="form-control" placeholder="USD" [(ngModel)]="baseCurrencyAmount">
+                    </div>
+                    <div class="col-sm-5 my-1">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text"> EUR </div>
+                        </div>
+                        <input type="number" 
+                        name="rateCalculated" class="form-control" placeholder="EUR" disabled [(ngModel)]="rateCalculated">
+                    </div>
+                    </div>
+                    <div class="col-sm-2 my-1">
+                        <button type="submit" class="btn btn-primary" (click)="getRate()">Convert!</button>
+                    </div>
+                </div>
+            </form>
+            <br><br>
+            <h2> Please insert the amount in USD that you want to calculate.</h2>
+    </div>
+    <br>
+</div>
