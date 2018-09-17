@@ -9,3 +9,8 @@ values(3,'USD','ARS', 39.70 , CURRENT_DATE);
 
 insert into currency(id, basecurrency, ratecurrency, rate, date)
 values(4,'USD','PEN', 3.34 , CURRENT_DATE);
+
+
+
+insert into user(id, username, password)
+values(1,'user','cGFzc3dvcmQ=');

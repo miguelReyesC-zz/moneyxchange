@@ -27,4 +27,8 @@ export class HomeComponent implements OnInit {
             console.log(error);
         });
     }
+
+    checkIfDisplay() {
+        return sessionStorage.getItem('token') !== '';
+    }
 }

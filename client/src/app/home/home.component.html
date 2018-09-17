@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container-fluid" *ngIf="checkIfDisplay()">
     <br>
     <div class="row justify-content-md-center">
         <h1>Money xchange!</h1>
     </div>
 	<div class="row justify-content-md-center">
-            <form>
+            <form autocomplete="off">
                 <div class="form-row align-items-center">
                     <div class="col-sm-5 my-1">
                         <input type="number"
@@ -27,5 +27,18 @@
             <br><br>
             <h2> Please insert the amount in USD that you want to calculate.</h2>
     </div>
+    <br><br>
+    <div class="row justify-content-md-center">
+            <p><a [routerLink]="['/login']">Logout!</a></p>
+        </div>
+</div>
+
+<div class="container-fluid" *ngIf="!checkIfDisplay()">
     <br>
+    <div class="row justify-content-md-center">
+        <h1>Unauthorized !!!</h1>
+    </div>
+    <div class="row justify-content-md-center">
+        <p><a [routerLink]="['/login']">Go to login page!</a></p>
+    </div>
 </div>

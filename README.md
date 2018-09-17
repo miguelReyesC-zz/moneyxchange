@@ -23,3 +23,22 @@ This will get a list with all the exchange rates from USD.
 ```
 http://localhost:8082/currency/exchange?base=USD
 ```
+
+
+## Extra/Optional:
+
+According to the exercise a "login" page was included and will be the landing page:
+```
+http://localhost:4200/
+```
+
+once the user is correctly authenticated using the following dummy credentials:
+- Username: **user**
+- Passwrod: **password**
+
+will be redirected to this page:
+```
+http://localhost:4200/home
+```
+
+where the app moneyxchange is located.
