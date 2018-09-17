@@ -5,6 +5,7 @@ import com.moneyxchange.server.entity.Currency;
 import com.moneyxchange.server.repository.CurrencyRepository;
 import com.moneyxchange.server.service.CurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -17,6 +18,7 @@ public class CurrencyServiceImpl implements CurrencyService {
     @Autowired
     private CurrencyRepository currencyRepository;
 
+    @Cacheable("exchangeRate")
     public CurrencyWS getExchangeByCurrencyAndRate(String base, String rate) {
         Currency currency = currencyRepository.getExchangeByBaseCurrencyAndRateCurrency(base, rate)
                 .orElseThrow(() -> new EntityNotFoundException("Currency not found!"));
@@ -26,6 +28,7 @@ public class CurrencyServiceImpl implements CurrencyService {
         return currencyWS;
     }
 
+    @Cacheable("exchangeRates")
     public CurrencyWS getExchangeByCurrency(String base) {
         Iterable<Currency> currency = currencyRepository.getAllExchangesByBaseCurrency(base);
         CurrencyWS currencyWS = new CurrencyWS(LocalDate.now());

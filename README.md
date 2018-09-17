@@ -3,7 +3,7 @@ Money xchange Project
 
 ## Server - Backend technologies used:
 
-Java 8, Spring Boot, Web and Data; JPA, H2 (in memory DB), Rest.
+Java 8, Spring Boot, Web and Data; JPA, H2 (in memory DB), Junit, Rest, Cache.
 
 
 ## Client - Frontend technologies used:
